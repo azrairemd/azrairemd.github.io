@@ -4,8 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Azra İrem Dalhasanoğlu — Sohbet </title>
+
 <script data-goatcounter="https://azrairemd.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+        async src="//gc.zgo.at/count.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<div id="visitorBox" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-family: Arial;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+">
+  👁 Visitors: <span id="visitorCount">...</span>
+</div>
+
+<script>
+fetch("https://azrairemd.goatcounter.com/counter/totals.json?start=0")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitorCount").innerText = data.count;
+  })
+  .catch(() => {
+    document.getElementById("visitorCount").innerText = "0";
+  });
+</script>
+          
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
